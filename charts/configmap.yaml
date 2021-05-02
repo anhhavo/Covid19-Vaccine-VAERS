@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bucket-configmap #name of configmap
+data:
+  Bucket_S3: "cse427-finalproject" #our Bucket
+  S3_Bucket_pplInEachAgeGroup: "Results/pplInEachAgeGroup.csv"
+  S3_Bucket_pplInEachAgeGroup: "Results/ppl_each_vaccine.csv"
+  S3_Bucket_pplInEachAgeGroup: "Results/peopledied_per_vaccine.csv"
+  S3_Bucket_pplInEachAgeGroup: "Results/modernaSymptomsCount modernaSymptomsCount.csv"
+  S3_Bucket_pfizerSymptomsCount: "Results/pfizerSymptomsCount.csv"
+  S3_Bucket_JANSSENSymptomsCount: "Results/JANSSENSymptomsCount.csv"
+  S3_Bucket_modernaSymptomsCountChild: "Results/modernaSymptomsCountChild.csv"
+  S3_Bucket_modernaSymptomsCountYouth: "Results/modernaSymptomsCountYouth.csv"
+  S3_Bucket_modernaSymptomsCountAdult: "Results/modernaSymptomsCountAdult.csv"
+  S3_Bucket_modernaSymptomsCountSenior: "Results/modernaSymptomsCountSenior.csv"
+  S3_Bucket_pfizerSymptomsCountChild: "Results/pfizerSymptomsCountChild.csv"
+  S3_Bucket_pfizerSymptomsCountYouth: "Results/Results/pfizerSymptomsCountYouth.csv"
+  S3_Bucket_pfizerSymptomsCountAdult: "Results/Results/pfizerSymptomsCountAdult.csv"
+  S3_Bucket_pfizerSymptomsCountSenior: "Results/Results/pfizerSymptomsCountSenior.csv"
+  S3_Bucket_JANSSENSymptomsCountChild: "Results/Results/JANSSENSymptomsCountChild.csv"
+  S3_Bucket_JANSSENSymptomsCountYouth: "Results/JANSSENSymptomsCountYouth.csv"
+  S3_Bucket_JANSSENSymptomsCountAdult: "Results/JANSSENSymptomsCountAdult.csv"
+  S3_Bucket_JANSSENSymptomsCountSenior: "Results/JANSSENSymptomsCountSenior.csv"
+  port: "8501" #Port 

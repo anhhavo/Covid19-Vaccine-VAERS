@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp-d
+spec:
+  replicas: 3 #create 3 pods 
+  selector:
+    matchLabels:
+      app: webapp-d
+  template:
+    metadata:
+      labels:
+        app: webapp-d
+    spec:
+      containers:
+      - name: webapp-d
+        image: anhhavo/cse427-finalproject:latest2
+        command: ["streamlit", "run", "/code/app.py"]
+        ports:
+        - containerPort: 8501
+        env:
+          - name: PYTHONUNBUFFERED
+            value: "1"
+        envFrom:
+          - configMapRef:
+              name: bucket-configmap
+          - secretRef:
+              name: aws-secret
+
+
+
+
+
+      
