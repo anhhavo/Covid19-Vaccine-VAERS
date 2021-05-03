@@ -10,5 +10,14 @@ Here is the [link](https://docs.google.com/presentation/d/1ZDso8ozNYUeNIeNqH7aPH
 # Description:
 We were interested in analying COVID19 data especially when many people are now taking Covid-Vaccine. We want to analyze data from people who took COVID-19 Vaccines that is reported to VAERS. Our data is chosen from Vaccine Adverse Event Reporting System (VAERS).
 
-#Analyzing with Spark
-We use Spark
+# Data Analysis
+We uploaded the three CSV files into AWS S3. On the Splice Machine server, we extracted the CSV files into pandas DataFrames and converted them all to spark DataFrames. We then run multiple spark SQL queries on the data, e.g. what adverse events happened most often for youth taking the Moderna vaccine. We then stored all the query results back into AWS S3.
+
+# Data Visualization
+We designed a web page to present our query results using Streamlit. We added several interactive features. There is a zoom in/zoom out button for all the graphs and a drop-down list to select by age group. There is also a tool bar next to each plot in “Symptom Information: Most Frequent Symptoms” where users can download the plot, draw Lasso Select, etc. Users can also mouse over each bar on all the graphs to read more statistical values.
+
+# Docker
+We dockerized our website into an image and pushed it to the docker hub. The image is at **anhhavo/cse427-finalproject:latest2**
+
+# Kubernetes
+We deployed our image into Minikube with ingress on the local machine. The website can now be accessed at **covidvaccine-vaers.info** locally.
