@@ -855,5 +855,56 @@ Seniors.show()
 # In[ ]:
 
 
+#Sub Query 4-5
+#How many people have life threatening -- ” L_THREAT” illness and recovered
+Life_threat_recovd = spark.sql('''
+select count(*) as Recovered
+from (
+    select spark_df2.VAERS_ID, spark_df2.L_THREAT, spark_df2.RECOVD
+    from spark_df2
+    where spark_df2.L_THREAT == "Y"
+    and spark_df2.RECOVD == "Y"
+    )
+''')
+#How many people have life threatening -- ” L_THREAT” illness and died?
+Life_threat_death = spark.sql('''
+select count(*) as Died
+from (
+    select spark_df2.VAERS_ID, spark_df2.L_THREAT, spark_df2.DIED
+    from spark_df2
+    where spark_df2.L_THREAT == "Y"
+    and spark_df2.DIED == "Y"
+    )
+''')
+Life_threat_recovd = Life_threat_recovd.toPandas()
+Life_threat_recovd =Life_threat_recovd.transpose()
+Life_threat_death = Life_threat_death.toPandas()
+Life_threat_death =Life_threat_death.transpose()
+#Life_threat_recovd = Life_threat_recovd.drop(Life_threat_recovd.index[0])
+print(Life_threat_recovd)
+print(Life_threat_death)
+#Already in S3
+with s3.open(
+    'cse427-finalproject/Results/recovd_death.csv','w') as f:
+    Life_threat_recovd.to_csv(f)
+    Life_threat_death.to_csv(f)
+#Add column percentage
+ppl_died = pd.read_csv('s3://cse427-finalproject/Results/peopledied_per_vaccine.csv')
+total_ppl = sub_q_1.toPandas()
+percentage = ['','','','']
+for i in range(len(ppl_died['VAX_MANU'])):
+    x = ppl_died['count(DISTINCT VAERS_ID)'][i]
+    y = total_ppl['count(1)'][i]
+    k = (x/y * 100).round(2)
+    percentage[i] = str(k) + “%”
+ppl_died['Percentage'] = percentage
+print(ppl_died)
+# with s3.open('s3://cse427-finalproject/Results/peopledied_per_vaccine2.csv','w') as f:
+#    ppl_died.to_csv(f)
+
+
+# In[ ]:
+
+
 spark.stop()
 
