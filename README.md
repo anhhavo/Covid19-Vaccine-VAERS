@@ -31,5 +31,5 @@ To install Kubernetes, type in terminal "brew install minikube"
 - minikube start --vm=true
 - minikube addons enable ingress
 - kubectl apply -f charts
-- sudo vi /etc/hosts -> add host "covidvaccine-vaers.info" to the corresponding ingress address and port
+- sudo vi /etc/hosts -> add host "covidvaccine-vaers.info" to the corresponding ingress address
 - whenever the deployment is ready, website will be up and running!
