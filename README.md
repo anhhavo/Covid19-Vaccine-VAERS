@@ -19,7 +19,7 @@ We designed a web page to present our query results using Streamlit. We added se
 All the visualization can be found in **src/app.py**
 
 # Docker
-We dockerized our website into an image and pushed it to the docker hub. The image is at **anhhavo/cse427-finalproject:latest2**
+We dockerized our website into an image and pushed it to the docker hub. The image is at **anhhavo/cse427-finalproject:latest2**\
 To install docker, follow this [documentation](https://docs.google.com/presentation/d/1ZAFXAtPQ4YvD2UwwhlDhSmoT0zgeY0sMVansX-XjlbQ/edit?usp=sharing)
 
 # Kubernetes
@@ -27,9 +27,9 @@ We deployed our image into Minikube with ingress on the local machine. The websi
 To install Kubernetes, type in terminal "brew install minikube"
 
 # To run our app:
-docker ps, if you see minikube, type "minikube delete"
-minikube start --vm=true
-minikube addons enable ingress
-kubectl apply -f charts
-sudo vi /etc/hosts -> add host "covidvaccine-vaers.info" to the corresponding ingress address and port
-whenever the deployment is ready, website will be up and running!
+- docker ps, if you see minikube, type "minikube delete"
+- minikube start --vm=true
+- minikube addons enable ingress
+- kubectl apply -f charts
+- sudo vi /etc/hosts -> add host "covidvaccine-vaers.info" to the corresponding ingress address and port
+- whenever the deployment is ready, website will be up and running!
