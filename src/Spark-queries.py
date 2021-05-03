@@ -22,8 +22,9 @@ get_spark_ui()
 # In[3]:
 
 
-spark._jsc.hadoopConfiguration().set("fs.s3a.awsAccessKeyId", "AKIAUFYEOJPFAD3RFH3K")
-spark._jsc.hadoopConfiguration().set("fs.s3a.awsSecretAccessKey", "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"
+#censored our access and secret keys
+spark._jsc.hadoopConfiguration().set("fs.s3a.awsAccessKeyId", "——————————————————")
+spark._jsc.hadoopConfiguration().set("fs.s3a.awsSecretAccessKey", "——————————————————————————"
 
 
 # In[4]:
@@ -38,8 +39,8 @@ get_ipython().system('pip install --upgrade fsspec')
 # In[5]:
 
 
-os.environ["AWS_ACCESS_KEY_ID"] = "AKIAUFYEOJPFAD3RFH3K"
-os.environ["AWS_SECRET_ACCESS_KEY"] = "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"
+os.environ["AWS_ACCESS_KEY_ID"] = "——————————————————"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "——————————————————————————"
 
 
 # In[7]:
