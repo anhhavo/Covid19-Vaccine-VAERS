@@ -5,6 +5,8 @@ Anh Ha Vo (465820)
 Grace Chen (457001)
 Yiqing Zhang (464515)
 
+Here is the [link](http://3.140.146.214:8501/) to our website.
+
 Here is the [link](https://docs.google.com/presentation/d/1ZDso8ozNYUeNIeNqH7aPHa4RfmYP0OogNlmidDm01z4/edit#slide=id.gd5d4def508_0_565) to our presentation:
 
 # Description:
@@ -25,6 +27,9 @@ To install docker, follow this [documentation](https://docs.google.com/presentat
 # Kubernetes
 We deployed our image into Minikube with ingress on the local machine. The website can be accessed at **covidvaccine-vaers.info** locally.
 To install Kubernetes, type in terminal "brew install minikube"
+
+# Room for future improvements
+- Coming soon.
 
 # To run our app:
 - docker ps, if you see minikube, type "minikube delete"
